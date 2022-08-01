@@ -27,9 +27,11 @@ namespace UITests
         {
             try
             {
+                System.Console.WriteLine(">>>>>>>>>>>>Current browser is "+browser);
                 // Create the driver for the current browser.
                 switch(browser)
                 {
+                    
                   case "Chrome":
                     driver = new ChromeDriver(
                         Environment.GetEnvironmentVariable("ChromeWebDriver")
@@ -100,6 +102,7 @@ namespace UITests
             // This happens when the underlying browser is not installed.
             if (driver == null)
             {
+                System.Console.WriteLine(">>>>>>>>>>>>Driver is null, ignoring....");
                 Assert.Ignore();
                 return;
             }
