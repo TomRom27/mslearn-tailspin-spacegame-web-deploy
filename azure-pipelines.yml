@@ -123,18 +123,18 @@ stages:
       displayName: 'Use .NET SDK $(dotnetSdkVersion)'
       inputs:
       - version: $(dotnetSdkVersion)
-      task: DotNetCoreCLI@2
+    - task: DotNetCoreCLI@2
       displayName: 'Build the project - $(buildConfiguration)'
       inputs:
         command: 'build'
         arguments: '--configuration $(buildConfiguration)'
         projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj'
-      task: DotNetCoreCLI@2
-        displayName: 'Run unit tests - $(buildConfiguration)'
-        inputs:
-          command: 'test'
-          arguments: '--no-buil --configuration $(buildConfiguration)'
-          projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj'
+    - task: DotNetCoreCLI@2
+      displayName: 'Run unit tests - $(buildConfiguration)'
+      inputs:
+        command: 'test'
+         arguments: '--no-buil --configuration $(buildConfiguration)'
+         projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj'
 
 
 - stage: 'Staging'
