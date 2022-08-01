@@ -133,8 +133,8 @@ stages:
       displayName: 'Run unit tests - $(buildConfiguration)'
       inputs:
         command: 'test'
-         arguments: '--no-buil --configuration $(buildConfiguration)'
-         projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj'
+        arguments: '--no-buil --configuration $(buildConfiguration)'
+        projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj'
 
 
 - stage: 'Staging'
