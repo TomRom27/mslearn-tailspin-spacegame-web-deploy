@@ -144,5 +144,5 @@ stages:
               webAppName: '$(WebAppNameStaging)'
               sourceSlot: 'swap'
               targetSlot: 'production'
-              action: 'SwapSlots'
+              action: 'Swap Slots'
 
